@@ -71,7 +71,7 @@ while mainloop:
                 if player_win:
                     pygame.display.set_caption("You win!")
                 else:
-                    pygame.display.set_caption("AI win!")
+                    pygame.display.set_caption("Bot win!")
             elif field[0].count("x") + field[0].count("0") + field[1].count("x") + \
                     field[1].count("0") + field[2].count("x") + field[2].count("0") == 8:
                 game_over = True
