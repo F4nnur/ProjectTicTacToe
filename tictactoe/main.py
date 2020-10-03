@@ -76,9 +76,6 @@ while mainloop:
                     field[1].count("0") + field[2].count("x") + field[2].count("0") == 8:
                 game_over = True
                 pygame.display.set_caption("Draw!")
-            elif event.type == pygame.KEYDOWN:
-                 if event.key == pygame.K_ESCAPE:
-                    game_over = True
 
     draw_tic_tac_toe(screen, field)
     draw_grid(screen)
