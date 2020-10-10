@@ -36,24 +36,31 @@ def get_win_check(fd, symbol):
     return flag_win
 
 
+
 SCREEN_SIZE = (300, 300)
 
 window = pygame.display.set_mode(SCREEN_SIZE)
 screen = pygame.Surface(SCREEN_SIZE)
 
 pygame.display.set_caption("TicTacToe")
-screen.fill((255, 255, 255))
+screen.fill((211, 211, 211))
 
 field = [["", "", ""],
          ["", "", ""],
          ["", "", ""]]
 mainloop = True
 game_over = False
+lightgray = (211, 211, 211)
 
 while mainloop:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             mainloop = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                mainloop = False
+           
+
 
         if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
             pos = pygame.mouse.get_pos()
@@ -71,7 +78,7 @@ while mainloop:
                 if player_win:
                     pygame.display.set_caption("You win!")
                 else:
-                    pygame.display.set_caption("Bot win!")
+                    pygame.display.set_caption("Computer win!")
             elif field[0].count("x") + field[0].count("0") + field[1].count("x") + \
                     field[1].count("0") + field[2].count("x") + field[2].count("0") == 8:
                 game_over = True
