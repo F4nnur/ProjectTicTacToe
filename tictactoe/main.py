@@ -42,7 +42,7 @@ SCREEN_SIZE = (300, 300)
 window = pygame.display.set_mode(SCREEN_SIZE)
 screen = pygame.Surface(SCREEN_SIZE)
 
-pygame.display.set_caption("TicTacToe")
+pygame.display.set_caption("Крестики-нолики")
 screen.fill((211, 211, 211))
 
 field = [["", "", ""],
@@ -76,13 +76,13 @@ while mainloop:
             if player_win or ai_win:
                 game_over = True
                 if player_win:
-                    pygame.display.set_caption("You win!")
+                    pygame.display.set_caption("Вы выйграли!")
                 else:
-                    pygame.display.set_caption("Computer win!")
+                    pygame.display.set_caption("Компьютер выйграл!")
             elif field[0].count("x") + field[0].count("0") + field[1].count("x") + \
                     field[1].count("0") + field[2].count("x") + field[2].count("0") == 8:
                 game_over = True
-                pygame.display.set_caption("Draw!")
+                pygame.display.set_caption("Ничья!")
 
     draw_tic_tac_toe(screen, field)
     draw_grid(screen)
